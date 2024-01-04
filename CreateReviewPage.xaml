@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectMedii.CreateReviewPage"
+             Title="CreateReviewPage">
+    
+    <StackLayout Margin="20">
+        <Entry Placeholder="Enter the title"
+                Text="{Binding Title}" />
+        <Entry Placeholder="Enter your name"
+                Text="{Binding Name}"/>
+        <Editor Placeholder="Enter your comment"
+               Text="{Binding Comment}"
+               HeightRequest="100"/>
+        <Label Text="Rating" />
+
+        <StackLayout Orientation="Horizontal">
+            <RadioButton GroupName="RatingGroup" Content="1" IsChecked="{Binding Rating, Mode=TwoWay}" />
+            <RadioButton GroupName="RatingGroup" Content="2" IsChecked="{Binding Rating, Mode=TwoWay}" />
+            <RadioButton GroupName="RatingGroup" Content="3" IsChecked="{Binding Rating, Mode=TwoWay}" />
+            <RadioButton GroupName="RatingGroup" Content="4" IsChecked="{Binding Rating, Mode=TwoWay}" />
+            <RadioButton GroupName="RatingGroup" Content="5" IsChecked="{Binding Rating, Mode=TwoWay}" />
+        </StackLayout>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Submit Review"
+                 Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                 Text="Delete"
+                 Clicked="OnDeleteButtonClicked" />
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>

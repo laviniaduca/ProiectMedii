@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectMedii.MainPage">
+    
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0">
+            
+        <Image
+            x:Name="bannerImage"
+            Source="banner.jfif"
+            Aspect="AspectFill"
+            HeightRequest="200"
+            WidthRequest="400" />
+
+
+        <Label 
+            Text="World of Makeup"
+            FontFamily="GvTimeRegular-4B1zD.ttf"
+            TextColor="#DA8B7C"
+            Padding="10"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="50"
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="Discover the art of makeup and enhance your beauty with our amazing products and tutorials."
+            SemanticProperties.HeadingLevel="Level3"
+            FontSize="18"
+            HorizontalOptions="Center" />
+
+        <!-- Zona de Artists -->
+        <VerticalStackLayout Spacing="25" Margin="30">
+        <Label
+            Text="Meet the Artists"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            HorizontalOptions="Center" />             
+
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Text="Explore our high-quality makeup products that will make you look and feel stunning." />
+
+        <Button
+            x:Name="ArtistsBtn"
+            Text="View Artists"
+            WidthRequest="150"
+            HorizontalOptions="Center"
+            Clicked="OnArtistsButtonClicked" />
+        </VerticalStackLayout>
+        
+        <!-- Zona de Tutorials -->
+        <VerticalStackLayout Spacing="25" Margin="30">
+        <Label
+            Text="Makeup Tutorials"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            HorizontalOptions="Center" />
+
+        <Label
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Text="Learn new makeup techniques with our step-by-step tutorials from professional makeup artists." />
+
+        <Button
+            x:Name="TutorialsBtn"
+            Text="View Tutorials"
+            WidthRequest="150"
+            HorizontalOptions="Center"
+            Clicked="OnTutorialsButtonClicked" />
+        </VerticalStackLayout>
+        
+        </VerticalStackLayout>
+            
+    </ScrollView>
+    
+</ContentPage>

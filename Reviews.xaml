@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectMedii.Reviews"
+             Title="Reviews">
+    
+    <ListView x:Name="listView" Margin="20">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="10" BackgroundColor="#D3D3D3">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Rating, StringFormat='Rating: {0:F1}'}" FontSize="16" FontAttributes="Bold" />
+                        </StackLayout>
+                        <Label Text="{Binding Name}" FontSize="14" />
+                        <Label Text="Artist Name: {Binding MakeupArtistID}" FontSize="14" />
+                        <Label Text="{Binding Comment}" FontSize="14" />
+                        <Label Text="{Binding DateCreated, StringFormat='Date: {0:d}'}" FontSize="12" TextColor="Gray" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+</ContentPage>

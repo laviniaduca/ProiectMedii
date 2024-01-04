@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectMedii.CreateAppointmentPage"
+             Title="CreateAppointmentPage">
+    <StackLayout Margin="20">
+        <Label Text="Your Full Name:" />
+        <Entry Placeholder="Enter the name"
+       Text="{Binding NumeClient}" />
+
+        <Label Text="Appointment Date:" />
+        <DatePicker x:Name="appointmentDatePicker" Date="{Binding AppointmentDateTime.Date}" />
+
+        <Label Text="Appointment Time:" />
+        <TimePicker x:Name="appointmentTimePicker" Time="{Binding AppointmentDateTime.TimeOfDay}" />
+
+        <Label Text="Makeup Artist:" />
+        <Entry Placeholder="Choose a Makeup Artist"
+       Text="{Binding MakeupArtistID}" />
+
+        <Label Text="Service:" />
+        <Entry Placeholder="Choose a service"
+       Text="{Binding ServiceID}" />
+ 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+            Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+            Text="Delete"
+            Clicked="OnDeleteButtonClicked" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

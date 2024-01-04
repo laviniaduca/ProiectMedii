@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectMedii.Tutorials"
+             Title="Tutorials">
+
+    <StackLayout Margin="20">
+        <Label Text="Check out our tutorials for some step-by-step guidance!"
+               FontSize="18"
+               FontAttributes="Bold"
+               HorizontalOptions="CenterAndExpand" />
+
+        <StackLayout>
+            <!-- Tutorial 1 -->
+            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
+                <Label Text="Bridal Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
+                <Image Source="bridaltutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
+                <Button Text="Watch Tutorial"
+                        Clicked="OnWatchTutorialClicked"
+                        CommandParameter="https://youtu.be/gguD8i12JQI?si=HW9XoZAexE39i6vW" />
+            </StackLayout>
+
+            <!-- Tutorial 2 -->
+            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
+                <Label Text="Editorial Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
+                <Image Source="editorialtutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
+                <Button Text="Watch Tutorial"
+                        Clicked="OnWatchTutorialClicked"
+                        CommandParameter="https://youtu.be/wGuQVhOf3ss?si=Z33EyY7nOqeINRap" />
+            </StackLayout>
+
+            <!-- Add more tutorials as needed -->
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
