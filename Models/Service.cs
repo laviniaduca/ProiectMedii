@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace ProiectMedii.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public int MakeupArtistID { get; set; }
+
+        [OneToMany]
+        public List<MakeupArtist> MakeupArtists { get; set; }
     }
 }

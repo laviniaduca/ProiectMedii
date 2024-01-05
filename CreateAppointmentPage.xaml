@@ -4,24 +4,22 @@
              x:Class="ProiectMedii.CreateAppointmentPage"
              Title="CreateAppointmentPage">
     <StackLayout Margin="20">
-        <Label Text="Your Full Name:" />
+        <Label Text="Your Full Name:" FontAttributes="Bold"/>
         <Entry Placeholder="Enter the name"
        Text="{Binding NumeClient}" />
 
-        <Label Text="Appointment Date:" />
+        <Label Text="Appointment Date:" FontAttributes="Bold"/>
         <DatePicker x:Name="appointmentDatePicker" Date="{Binding AppointmentDateTime.Date}" />
 
-        <Label Text="Appointment Time:" />
+        <Label Text="Appointment Time:" FontAttributes="Bold"/>
         <TimePicker x:Name="appointmentTimePicker" Time="{Binding AppointmentDateTime.TimeOfDay}" />
 
-        <Label Text="Makeup Artist:" />
-        <Entry Placeholder="Choose a Makeup Artist"
-       Text="{Binding MakeupArtistID}" />
+        <Label Text="Makeup Artist:" FontAttributes="Bold"/>
+        <Label x:Name="makeupArtistLabel" />
 
-        <Label Text="Service:" />
-        <Entry Placeholder="Choose a service"
-       Text="{Binding ServiceID}" />
- 
+        <Label Text="Service:" FontAttributes="Bold"/>
+        <Label x:Name="serviceLabel" />
+
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

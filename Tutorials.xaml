@@ -29,7 +29,32 @@
                         CommandParameter="https://youtu.be/wGuQVhOf3ss?si=Z33EyY7nOqeINRap" />
             </StackLayout>
 
-            <!-- Add more tutorials as needed -->
+            <!-- Tutorial 3 -->
+            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
+                <Label Text="Natural Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
+                <Image Source="naturaltutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
+                <Button Text="Watch Tutorial"
+            Clicked="OnWatchTutorialClicked"
+            CommandParameter="https://www.youtube.com/watch?v=ljItjePnX6Y" />
+            </StackLayout>
+
+            <!-- Tutorial 4 -->
+            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
+                <Label Text="Glam Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
+                <Image Source="glamtutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
+                <Button Text="Watch Tutorial"
+            Clicked="OnWatchTutorialClicked"
+            CommandParameter="https://www.youtube.com/watch?v=UvomTh2o3Ec" />
+            </StackLayout>
+
+            <!-- Tutorial 5 -->
+            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
+                <Label Text="Douyin Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
+                <Image Source="douyintutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
+                <Button Text="Watch Tutorial"
+            Clicked="OnWatchTutorialClicked"
+            CommandParameter="https://www.youtube.com/watch?v=Y2ARqkq_SQ0" />
+            </StackLayout>
         </StackLayout>
     </StackLayout>
 

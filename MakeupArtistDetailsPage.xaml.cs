@@ -4,9 +4,28 @@ namespace ProiectMedii
 {
     public partial class MakeupArtistDetailsPage : ContentPage
     {
-        public MakeupArtistDetailsPage()
+        public MakeupArtistDetailsPage(MakeupArtist selectedArtist)
         {
             InitializeComponent();
+            InitializePageAsync(selectedArtist.ID);
+        }
+
+        private async void InitializePageAsync(int makeupArtistId)
+        {
+            var makeupArtist = await App.Database.GetMakeupArtistAsync(makeupArtistId);
+
+            if (makeupArtist != null && makeupArtist.ServiceID.HasValue)
+            {
+                var service = await App.Database.GetServiceAsync(makeupArtist.ServiceID.Value);
+
+                if (service != null)
+                {
+                    serviceLabel.Text = service.Title;
+                }
+            }
+
+            // Set other properties of the Appointment as needed
+            BindingContext = makeupArtist;
         }
 
         protected override void OnAppearing()
@@ -22,6 +41,7 @@ namespace ProiectMedii
                 BindingContext = selectedArtist;
             }
         }
+
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             var slist = (MakeupArtist)BindingContext;

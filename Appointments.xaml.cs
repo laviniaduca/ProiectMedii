@@ -29,10 +29,7 @@ public partial class Appointments : ContentPage
     {
         if (e.SelectedItem != null)
         {
-            await Navigation.PushAsync(new AppointmentDetailsPage
-            {
-                BindingContext = e.SelectedItem as Appointment
-            });
+            await Navigation.PushAsync(new AppointmentDetailsPage(e.SelectedItem as Appointment));
         }
     }
 }

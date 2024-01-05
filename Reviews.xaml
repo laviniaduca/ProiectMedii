@@ -3,23 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProiectMedii.Reviews"
              Title="Reviews">
-    
-    <ListView x:Name="listView" Margin="20">
-        <ListView.ItemTemplate>
+
+    <CollectionView x:Name="collectionView"
+            Margin="20"
+            SelectionMode="Single"
+            ItemSizingStrategy="MeasureAllItems"
+            ItemsSource="{Binding Reviews}">
+        <CollectionView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <StackLayout Padding="10" BackgroundColor="#D3D3D3">
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding Rating, StringFormat='Rating: {0:F1}'}" FontSize="16" FontAttributes="Bold" />
-                        </StackLayout>
-                        <Label Text="{Binding Name}" FontSize="14" />
-                        <Label Text="Artist Name: {Binding MakeupArtistID}" FontSize="14" />
-                        <Label Text="{Binding Comment}" FontSize="14" />
-                        <Label Text="{Binding DateCreated, StringFormat='Date: {0:d}'}" FontSize="12" TextColor="Gray" />
+                <StackLayout Padding="5" BackgroundColor="#D3D3D3">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Rating, StringFormat='Rating: {0:F1}'}" FontSize="16" FontAttributes="Bold" />
                     </StackLayout>
-                </ViewCell>
+                    <Label Text="{Binding Name}" FontSize="14" />
+                    <Label Text="{Binding Comment}" FontSize="14" />
+                    <Label Text="{Binding DateCreated, StringFormat='Date: {0:d}'}" FontSize="12" TextColor="Gray" />
+                </StackLayout>
             </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
     
 </ContentPage>

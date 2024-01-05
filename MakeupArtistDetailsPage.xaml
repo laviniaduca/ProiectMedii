@@ -12,8 +12,8 @@
                 Text="{Binding Photo}" />
         <Editor Placeholder="Phone Number: " 
                 Text="{Binding PhoneNumber}" />
-        <Editor Placeholder="ServiceID: " 
-                Text="{Binding ServiceID}" />
+        <Label Text="Service Title" />
+        <Label x:Name="serviceLabel" />
 
         <Grid>
             <Grid.ColumnDefinitions>

@@ -7,8 +7,8 @@ public partial class CreateServicePage : ContentPage
 	public CreateServicePage()
 	{
 		InitializeComponent();
-	}
-
+    }
+    
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         var service = (Service)BindingContext;

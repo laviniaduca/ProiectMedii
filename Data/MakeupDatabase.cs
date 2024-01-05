@@ -66,7 +66,7 @@ namespace ProiectMedii.Data
         }
 
         // returneaza un record specific pe baza ID-ului
-        public Task<Service> GetServicesAsync(int id)
+        public Task<Service> GetServiceAsync(int id)
         {
             return _database.Table<Service>()
                 .Where(i => i.ID == id)
@@ -91,6 +91,20 @@ namespace ProiectMedii.Data
         {
             return _database.DeleteAsync(service);
         }
+
+        public async Task<List<string>> GetAllServiceTitlesAsync()
+        {
+            var services = await _database.Table<Service>().ToListAsync();
+            return services.Select(s => s.Title).ToList();
+        }
+
+        public Task<Service> GetServiceByTitleAsync(string title)
+        {
+            return _database.Table<Service>()
+                .Where(s => s.Title == title)
+                .FirstOrDefaultAsync();
+        }
+
 
 
         // ------------- CRUD APPOINTMENT ------------

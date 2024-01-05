@@ -28,14 +28,22 @@ namespace ProiectMedii
             });
         }
 
-        async void OnCollectionViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.SelectedItem != null)
+            Console.WriteLine("SelectionChanged triggered");
+
+            if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
             {
-                await Navigation.PushAsync(new MakeupArtistDetailsPage
+                var selectedMakeupArtist = e.CurrentSelection[0] as MakeupArtist;
+
+                if (selectedMakeupArtist != null)
                 {
-                    BindingContext = e.SelectedItem as MakeupArtist
-                });
+                    Console.WriteLine($"Selected MakeupArtist: {selectedMakeupArtist.Name}");
+                    await Navigation.PushAsync(new MakeupArtistDetailsPage(selectedMakeupArtist));
+                }
+
+                // Deselect the item to allow selecting it again
+                collectionView.SelectedItem = null;
             }
         }
 

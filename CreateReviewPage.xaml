@@ -3,10 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProiectMedii.CreateReviewPage"
              Title="CreateReviewPage">
-    
+
     <StackLayout Margin="20">
-        <Entry Placeholder="Enter the title"
-                Text="{Binding Title}" />
         <Entry Placeholder="Enter your name"
                 Text="{Binding Name}"/>
         <Editor Placeholder="Enter your comment"

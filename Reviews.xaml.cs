@@ -12,7 +12,7 @@ public partial class Reviews : ContentPage
     {
         base.OnAppearing();
 
-        listView.ItemsSource = await App.Database.GetReviewsAsync();
+        collectionView.ItemsSource = await App.Database.GetReviewsAsync();
     }
 
     /*async void OnReviewAddedClicked(object sender, EventArgs e)

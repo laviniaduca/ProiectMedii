@@ -14,9 +14,10 @@
                Text="{Binding Photo}" />
             <Entry Placeholder="Enter the phone number"
                Text="{Binding PhoneNumber}" />
-            <Entry Placeholder="Enter the service ID"
-               Text="{Binding ServiceID}" />
-            <Grid>
+        <Label Text="Service Title" />
+        <Picker x:Name="servicePicker" Title="Select Service" SelectedIndexChanged="OnServicePickerSelectedIndexChanged">
+        </Picker>
+        <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />

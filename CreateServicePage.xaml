@@ -12,8 +12,6 @@
                 HeightRequest="100" />
         <Entry Placeholder="Enter the price"
                 Text="{Binding Price}" />
-        <Entry Placeholder="Choose a Makeup Artist"
-                Text="{Binding MakeupArtistID}" />
 
         <Grid>
             <Grid.ColumnDefinitions>

@@ -13,24 +13,28 @@
                 Margin="20"
                 SelectionMode="Single"
                 ItemSizingStrategy="MeasureAllItems"
-                ItemsSource="{Binding MakeupArtists}">
+                SelectionChanged="OnCollectionViewSelectionChanged">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <StackLayout Padding="10" BackgroundColor="#D3D3D3">
-                    <Image Source="{Binding Photo}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill" />
+                <StackLayout Padding="10" Margin="5" BackgroundColor="#D3D3D3">
+                    <Image Source="{Binding Photo}" HeightRequest="250" WidthRequest="200" Aspect="AspectFill" />
 
-                    <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold" />
+                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
 
-                    <Label Text="{Binding Description}" FontSize="14" />
+                    <Label Text="{Binding Description}" FontSize="16" />
 
                     <Label Text="{Binding PhoneNumber}" FontSize="14" />
-                    
-                    <Button Text="Write a Review"
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Button Text="Write a Review"
                                 Clicked="OnReviewAddedClicked"
-                                CommandParameter="{Binding ID}" />
-                    <Button Text="Book an Appointment"
+                                CommandParameter="{Binding ID}" 
+                                Margin="5"/>
+                        <Button Text="Book an Appointment"
                                 Clicked="OnAppointmentAddedClicked"
-                                CommandParameter="{Binding ID}" />
+                                CommandParameter="{Binding ID}" 
+                                Margin="5"/>
+                    </HorizontalStackLayout>
+                    
 
                 </StackLayout>
             </DataTemplate>
