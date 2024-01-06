@@ -1,5 +1,6 @@
 using ProiectMedii.Models;
 using ProiectMedii.Data;
+using Plugin.LocalNotification;
 
 namespace ProiectMedii;
 
@@ -29,16 +30,13 @@ public partial class CreateAppointmentPage : ContentPage
                 }
             }
 
-            // Set other properties of the Appointment as needed
             var appointment = new Appointment
             {
                 MakeupArtistID = makeupArtistId,
-                // Set other properties of the Appointment as needed
             };
 
             BindingContext = appointment;
 
-            // Initialize the DatePicker and TimePicker with the existing AppointmentDateTime
             appointmentDatePicker.Date = appointment.AppointmentDateTime.Date;
             appointmentTimePicker.Time = appointment.AppointmentDateTime.TimeOfDay;
 
@@ -77,13 +75,32 @@ public partial class CreateAppointmentPage : ContentPage
 
                     System.Diagnostics.Debug.WriteLine($"Appointment ServiceTitle: {appointment.ServiceTitle}");
 
+                    // trimitere de notificare cu o zi inainte de appointment
+                    if (await LocalNotificationCenter.Current.AreNotificationsEnabled() == false)
+                    {
+                        await LocalNotificationCenter.Current.RequestNotificationPermission();
+                    }
+
+                    DateTime notificationDate = appointment.AppointmentDateTime.AddDays(-1);
+                    var notification = new NotificationRequest
+                    {
+                        NotificationId = appointment.ID,
+                        Title = "Appointment Reminder",
+                        Description = $"Your {appointment.ServiceTitle} appointment with {appointment.MakeupArtistName} is tomorrow!",
+                        ReturningData = "optional data",
+                        Schedule =
+                        {
+                                NotifyTime = notificationDate
+                        }
+                    };
+
+                    await LocalNotificationCenter.Current.Show(notification);
                 }
             }
         }
 
         await App.Database.SaveAppointmentAsync(appointment);
 
-        // Navigate back to the previous page or any desired page
         await Navigation.PopAsync();
     }
 

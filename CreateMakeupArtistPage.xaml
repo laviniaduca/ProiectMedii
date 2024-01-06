@@ -14,7 +14,7 @@
                Text="{Binding Photo}" />
             <Entry Placeholder="Enter the phone number"
                Text="{Binding PhoneNumber}" />
-        <Label Text="Service Title" />
+        <Label Text="Service Title:" FontAttributes="Bold"/>
         <Picker x:Name="servicePicker" Title="Select Service" SelectedIndexChanged="OnServicePickerSelectedIndexChanged">
         </Picker>
         <Grid>
@@ -23,9 +23,11 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button Text="Save"
+                        Margin="10"
                         Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1"
                         Text="Delete"
+                        Margin="10"
                         Clicked="OnDeleteButtonClicked" />
             </Grid>
         </StackLayout>

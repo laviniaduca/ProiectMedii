@@ -25,10 +25,12 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Save"
+            <Button Text="Create"
+                    Margin="10"
                     Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
                     Text="Delete"
+                    Margin="10"
                     Clicked="OnDeleteButtonClicked" />
         </Grid>
     </StackLayout>

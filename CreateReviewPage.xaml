@@ -26,9 +26,11 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="Submit Review"
+                    Margin="10"
                     Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
-                 Text="Delete"
+                    Text="Delete"
+                    Margin="10"
                     Clicked="OnDeleteButtonClicked" />
         </Grid>
     </StackLayout>

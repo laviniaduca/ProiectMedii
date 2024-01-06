@@ -45,12 +45,10 @@ public partial class ReviewDetailsPage : ContentPage
     {
         base.OnAppearing();
 
-        // Assuming you passed the selected Review through navigation
         var selectedReview = BindingContext as Review;
 
         if (selectedReview != null)
         {
-            // Set the BindingContext for data binding
             BindingContext = selectedReview;
         }
     }*/

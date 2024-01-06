@@ -27,7 +27,7 @@
                     Margin="10"
                     Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1" 
-                    Text="Cancel Appointment" 
+                    Text="Delete" 
                     BackgroundColor="#FF574F"
                     Margin="10"
                     Clicked="OnDeleteButtonClicked"/>
