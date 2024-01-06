@@ -11,7 +11,6 @@ public partial class Tutorials : ContentPage
         var button = sender as Button;
         if (button != null && button.CommandParameter is string youTubeLink)
         {
-            // Use Xamarin.Essentials to open the YouTube link
             await Launcher.OpenAsync(new Uri(youTubeLink));
         }
     }

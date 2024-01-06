@@ -16,7 +16,7 @@
                 SelectionChanged="OnCollectionViewSelectionChanged">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <StackLayout Padding="10" Margin="5" BackgroundColor="#D3D3D3">
+                <StackLayout Padding="10" Margin="5" BackgroundColor="#F7E7E4">
                     <Image Source="{Binding Photo}" HeightRequest="250" WidthRequest="200" Aspect="AspectFill" />
 
                     <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />

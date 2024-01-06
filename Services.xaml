@@ -8,11 +8,20 @@
         <ToolbarItem Text="Add Service"
              Clicked="OnServiceAddedClicked" />
     </ContentPage.ToolbarItems>
+    
     <ListView x:Name="listView"
-                Margin="20">
+                Margin="20"
+                ItemSelected="OnListViewItemSelected"
+                HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Title}" />
+                <ViewCell Height="300" >
+                    <StackLayout>
+                        <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold" TextColor="#DA8B7C" Margin="0,5,0,5"/>
+                        <Label Text="{Binding Description}" />
+                        <Label Text="{Binding Price, StringFormat='Price: {0}'}" FontAttributes="Bold" Margin="0,7,0,10"/>  
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

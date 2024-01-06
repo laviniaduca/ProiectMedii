@@ -8,12 +8,14 @@ public partial class Services : ContentPage
 	{
 		InitializeComponent();
 	}
+
     protected override async void OnAppearing()
     {
         base.OnAppearing();
 
         listView.ItemsSource = await App.Database.GetServicesAsync();
     }
+
     async void OnServiceAddedClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new CreateServicePage
@@ -22,7 +24,7 @@ public partial class Services : ContentPage
         });
     }
 
-   /*async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+   async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {
@@ -31,5 +33,5 @@ public partial class Services : ContentPage
                 BindingContext = e.SelectedItem as Service
             });
         }
-    }*/
+    }
 }

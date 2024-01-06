@@ -9,10 +9,21 @@
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView"
             Margin="20"
-            ItemSelected="OnListViewItemSelected">
+            ItemSelected="OnListViewItemSelected"
+            HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding NumeClient}" />
+                <ViewCell Height="300" >
+                    <StackLayout>
+                        <Label Text="{Binding NumeClient}" FontSize="18" FontAttributes="Bold" TextColor="#DA8B7C" Margin="0,5,0,5"/>
+                        <VerticalStackLayout Margin="0,7,0,10">
+                            <Label Text="{Binding AppointmentDateTime, StringFormat='Date/Time: {0}'}" />
+                            <Label Text="{Binding ServiceTitle, StringFormat='Service: {0}'}" />
+                            <Label Text="{Binding MakeupArtistName, StringFormat='Artist: {0}'}" />
+                        </VerticalStackLayout>
+
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

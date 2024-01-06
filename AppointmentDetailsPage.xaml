@@ -22,11 +22,15 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Save" 
-                Clicked="OnSaveButtonClicked" />
+            <Button Text="Save"
+                    BackgroundColor="#88C655"
+                    Margin="10"
+                    Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1" 
-                Text="Cancel Appointment" 
-                Clicked="OnDeleteButtonClicked"/>
+                    Text="Cancel Appointment" 
+                    BackgroundColor="#FF574F"
+                    Margin="10"
+                    Clicked="OnDeleteButtonClicked"/>
         </Grid>
 
         <Button Text="Back" 

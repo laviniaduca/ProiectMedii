@@ -23,14 +23,20 @@ public partial class Reviews : ContentPage
         });
     }*/
 
-    /*async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+    async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (e.SelectedItem != null)
+        Console.WriteLine("SelectionChanged triggered");
+
+        if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
         {
-            await Navigation.PushAsync(new ReviewDetailsPage
+            var selectedReview = e.CurrentSelection[0] as Review;
+
+            if (selectedReview != null)
             {
-                BindingContext = e.SelectedItem as Review
-            });
+                await Navigation.PushAsync(new ReviewDetailsPage(selectedReview));
+            }
+
+            collectionView.SelectedItem = null;
         }
-    }*/
+    }
 }

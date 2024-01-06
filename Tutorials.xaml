@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProiectMedii.Tutorials"
              Title="Tutorials">
-
+    
+    <ScrollView>
     <StackLayout Margin="20">
         <Label Text="Check out our tutorials for some step-by-step guidance!"
                FontSize="18"
@@ -12,50 +13,76 @@
 
         <StackLayout>
             <!-- Tutorial 1 -->
-            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
-                <Label Text="Bridal Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
-                <Image Source="bridaltutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
-                <Button Text="Watch Tutorial"
+                <StackLayout Padding="10" BackgroundColor="#F7E7E4" Margin="0,20,0,20">
+                <Label Text="Bridal Makeup Tutorial" Margin="10" FontSize="16" FontAttributes="Bold" />
+                    <Frame CornerRadius="8" 
+                            Padding="0"
+                            IsClippedToBounds="True">
+                        <Image Source="bridaltutorial.jpg" HeightRequest="200" WidthRequest="330" Aspect="AspectFill" />
+                    </Frame>
+                    <Button Text="Watch Tutorial"
+                        Margin="15"
                         Clicked="OnWatchTutorialClicked"
                         CommandParameter="https://youtu.be/gguD8i12JQI?si=HW9XoZAexE39i6vW" />
             </StackLayout>
 
             <!-- Tutorial 2 -->
-            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
-                <Label Text="Editorial Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
-                <Image Source="editorialtutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
-                <Button Text="Watch Tutorial"
+                <StackLayout Padding="10" BackgroundColor="#F7E7E4" Margin="0,0,0,20">
+                <Label Text="Editorial Makeup Tutorial" Margin="10" FontSize="16" FontAttributes="Bold" />
+                    <Frame CornerRadius="8" 
+                            Padding="0"
+                            IsClippedToBounds="True">
+                        <Image Source="editorialtutorial.jpg" HeightRequest="200" WidthRequest="330" Aspect="AspectFill" />
+                    </Frame>
+                    <Button Text="Watch Tutorial"
+                        Margin="15"
                         Clicked="OnWatchTutorialClicked"
                         CommandParameter="https://youtu.be/wGuQVhOf3ss?si=Z33EyY7nOqeINRap" />
             </StackLayout>
 
             <!-- Tutorial 3 -->
-            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
-                <Label Text="Natural Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
-                <Image Source="naturaltutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
-                <Button Text="Watch Tutorial"
-            Clicked="OnWatchTutorialClicked"
-            CommandParameter="https://www.youtube.com/watch?v=ljItjePnX6Y" />
+                <StackLayout Padding="10" BackgroundColor="#F7E7E4" Margin="0,0,0,20">
+                <Label Text="Natural Makeup Tutorial" Margin="10" FontSize="16" FontAttributes="Bold" />
+                    <Frame CornerRadius="8" 
+                            Padding="0"
+                            IsClippedToBounds="True">
+                        <Image Source="naturaltutorial.jpg" HeightRequest="200" WidthRequest="330" Aspect="AspectFill" />
+                    </Frame>
+                    <Button Text="Watch Tutorial"
+                        Margin="15"
+                        Clicked="OnWatchTutorialClicked"
+                        CommandParameter="https://www.youtube.com/watch?v=ljItjePnX6Y" />
             </StackLayout>
 
             <!-- Tutorial 4 -->
-            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
-                <Label Text="Glam Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
-                <Image Source="glamtutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
-                <Button Text="Watch Tutorial"
-            Clicked="OnWatchTutorialClicked"
-            CommandParameter="https://www.youtube.com/watch?v=UvomTh2o3Ec" />
+                <StackLayout Padding="10" BackgroundColor="#F7E7E4" Margin="0,0,0,20">
+                <Label Text="Glam Makeup Tutorial" Margin="10" FontSize="16" FontAttributes="Bold" />
+                    <Frame CornerRadius="8" 
+                            Padding="0"
+                            IsClippedToBounds="True">
+                        <Image Source="glamtutorial.jpg" HeightRequest="200" WidthRequest="330" Aspect="AspectFill" />
+                    </Frame>
+                    <Button Text="Watch Tutorial"
+                        Margin="15"
+                        Clicked="OnWatchTutorialClicked"
+                        CommandParameter="https://www.youtube.com/watch?v=UvomTh2o3Ec" />
             </StackLayout>
 
             <!-- Tutorial 5 -->
-            <StackLayout Padding="10" BackgroundColor="#D3D3D3" Margin="0,0,0,10">
-                <Label Text="Douyin Makeup Tutorial" FontSize="16" FontAttributes="Bold" />
-                <Image Source="douyintutorial.jpg" HeightRequest="200" WidthRequest="300" Aspect="AspectFill" />
-                <Button Text="Watch Tutorial"
-            Clicked="OnWatchTutorialClicked"
-            CommandParameter="https://www.youtube.com/watch?v=Y2ARqkq_SQ0" />
+                <StackLayout Padding="10" BackgroundColor="#F7E7E4" Margin="0,0,0,20">
+                <Label Text="Douyin Makeup Tutorial" Margin="10" FontSize="16" FontAttributes="Bold" />
+                    <Frame CornerRadius="8" 
+                        Padding="0"
+                        IsClippedToBounds="True">
+                        <Image Source="douyintutorial.jpg" HeightRequest="200" WidthRequest="330" Aspect="AspectFill" />
+                    </Frame>
+                    <Button Text="Watch Tutorial"
+                        Margin="15"
+                        Clicked="OnWatchTutorialClicked"
+                        CommandParameter="https://www.youtube.com/watch?v=Y2ARqkq_SQ0" />
             </StackLayout>
         </StackLayout>
     </StackLayout>
-
+    </ScrollView>
+    
 </ContentPage>

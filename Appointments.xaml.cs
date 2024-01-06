@@ -16,7 +16,6 @@ public partial class Appointments : ContentPage
         listView.ItemsSource = await App.Database.GetAppointmentsAsync();
     }
 
-    // nu mai am nevoie de asta pentru ca vreau sa fac appointment direct din pagina de MakeupArtists
     /*async void OnAppointmentAddedClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new CreateAppointmentPage

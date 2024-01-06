@@ -13,11 +13,11 @@
         <Label Text="Rating" />
 
         <StackLayout Orientation="Horizontal">
-            <RadioButton GroupName="RatingGroup" Content="1" IsChecked="{Binding Rating, Mode=TwoWay}" />
-            <RadioButton GroupName="RatingGroup" Content="2" IsChecked="{Binding Rating, Mode=TwoWay}" />
-            <RadioButton GroupName="RatingGroup" Content="3" IsChecked="{Binding Rating, Mode=TwoWay}" />
-            <RadioButton GroupName="RatingGroup" Content="4" IsChecked="{Binding Rating, Mode=TwoWay}" />
-            <RadioButton GroupName="RatingGroup" Content="5" IsChecked="{Binding Rating, Mode=TwoWay}" />
+            <RadioButton GroupName="RatingGroup" Content="1" CheckedChanged="OnRatingCheckedChanged" />
+            <RadioButton GroupName="RatingGroup" Content="2" CheckedChanged="OnRatingCheckedChanged" />
+            <RadioButton GroupName="RatingGroup" Content="3" CheckedChanged="OnRatingCheckedChanged" />
+            <RadioButton GroupName="RatingGroup" Content="4" CheckedChanged="OnRatingCheckedChanged" />
+            <RadioButton GroupName="RatingGroup" Content="5" CheckedChanged="OnRatingCheckedChanged" />
         </StackLayout>
         
         <Grid>
@@ -26,10 +26,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="Submit Review"
-                 Clicked="OnSaveButtonClicked" />
+                    Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
                  Text="Delete"
-                 Clicked="OnDeleteButtonClicked" />
+                    Clicked="OnDeleteButtonClicked" />
         </Grid>
     </StackLayout>
     
