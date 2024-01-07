@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProiectMedii"
              x:Class="ProiectMedii.CreateAppointmentPage"
              Title="CreateAppointmentPage">
+
     <StackLayout Margin="20">
+
         <Label Text="Your Full Name:" FontAttributes="Bold"/>
         <Entry Placeholder="Enter the name"
-       Text="{Binding NumeClient}" />
+               Text="{Binding NumeClient}" />
 
         <Label Text="Appointment Date:" FontAttributes="Bold"/>
         <DatePicker x:Name="appointmentDatePicker" Date="{Binding AppointmentDateTime.Date}" />
@@ -20,6 +23,8 @@
         <Label Text="Service:" FontAttributes="Bold"/>
         <Label x:Name="serviceLabel" />
 
+        <Label Text="Working hours: 8:00-18:00" TextColor="Gold" />
+        <Label x:Name="validationMessageLabel" TextColor="Red" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

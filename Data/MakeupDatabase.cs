@@ -175,5 +175,16 @@ namespace ProiectMedii.Data
         {
             return _database.DeleteAsync(review);
         }
+
+        // pentru a sterge un Service care are asociat unul sau mai multi MakeupArtists
+        public async Task<bool> AreMakeupArtistsAssociatedWithService(int serviceId)
+        {
+            var makeupArtists = await _database.Table<MakeupArtist>()
+                .Where(m => m.ServiceID == serviceId)
+                .ToListAsync();
+
+            return makeupArtists.Any();
+        }
+
     }
 }

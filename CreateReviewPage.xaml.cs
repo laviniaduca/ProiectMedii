@@ -33,6 +33,24 @@ public partial class CreateReviewPage : ContentPage
     {
         var review = (Review)BindingContext;
 
+        // validare pentru campuri
+        if (string.IsNullOrWhiteSpace(review.Name) ||
+            string.IsNullOrWhiteSpace(review.Comment) ||
+            review.Rating <= 0)
+        {
+            DisplayValidationMessage("All fields are required, and Rating must be selected.");
+            return;
+        }
+
+        async void DisplayValidationMessage(string message)
+        {
+            validationMessageLabel.Text = message;
+
+            await Task.Delay(3000);
+
+            validationMessageLabel.Text = string.Empty;
+        }
+
         Console.WriteLine($"Rating before saving: {review.Rating}");
 
         review.DateCreated = DateTime.UtcNow;

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProiectMedii"
              x:Class="ProiectMedii.CreateMakeupArtistPage"
              Title="CreateMakeupArtistPage">
 
         <StackLayout Margin="20">
             <Entry Placeholder="Enter the name"
-               Text="{Binding Name}" />
-            <Editor Placeholder="Enter the description"
+               Text="{Binding Name}" >
+            <Entry.Behaviors>
+                <local:ValidationBehavior />
+            </Entry.Behaviors>
+        </Entry>
+        <Editor Placeholder="Enter the description"
                 Text="{Binding Description}"
                 HeightRequest="100" />
             <Entry Placeholder="Enter the photo URL"
@@ -17,6 +22,8 @@
         <Label Text="Service Title:" FontAttributes="Bold"/>
         <Picker x:Name="servicePicker" Title="Select Service" SelectedIndexChanged="OnServicePickerSelectedIndexChanged">
         </Picker>
+
+        <Label x:Name="validationMessageLabel" TextColor="Red" />
         <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

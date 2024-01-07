@@ -13,6 +13,8 @@
         <Entry Placeholder="Enter the price"
                 Text="{Binding Price}" />
 
+        <Label Text="If not chosen, Price will default to 0." TextColor="Gold" />
+        <Label x:Name="validationMessageLabel" TextColor="Red" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

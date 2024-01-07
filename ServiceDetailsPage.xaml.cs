@@ -18,7 +18,16 @@ public partial class ServiceDetailsPage : ContentPage
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
         var service = (Service)BindingContext;
-        await App.Database.DeleteServiceAsync(service);
-        await Navigation.PopAsync();
+
+        if (await App.Database.AreMakeupArtistsAssociatedWithService(service.ID))
+        {
+            // un warning pentru a preveni stergerea in caz ca mai avem MakeupArtists asociati cu Service
+            await DisplayAlert("Warning", "There are still makeup artists associated with this service. Remove them before deleting the service.", "OK");
+        }
+        else
+        {
+            await App.Database.DeleteServiceAsync(service);
+            await Navigation.PopAsync();
+        }
     }
 }

@@ -19,7 +19,9 @@
             <RadioButton GroupName="RatingGroup" Content="4" CheckedChanged="OnRatingCheckedChanged" />
             <RadioButton GroupName="RatingGroup" Content="5" CheckedChanged="OnRatingCheckedChanged" />
         </StackLayout>
-        
+
+        <Label Text="If not chosen, Rating will default to 1." TextColor="Gold" />
+        <Label x:Name="validationMessageLabel" TextColor="Red" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

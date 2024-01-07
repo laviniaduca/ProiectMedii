@@ -47,6 +47,22 @@ public partial class CreateAppointmentPage : ContentPage
     {
         var appointment = (Appointment)BindingContext;
 
+        if (string.IsNullOrWhiteSpace(appointment.NumeClient) || 
+            appointment.AppointmentDateTime == DateTime.MinValue || appointment.AppointmentDateTime.Date < DateTime.Today)
+        {
+            DisplayValidationMessage("All fields are required.");
+            return;
+        }
+
+        async void DisplayValidationMessage(string message)
+        {
+            validationMessageLabel.Text = message;
+
+            await Task.Delay(6000);
+
+            validationMessageLabel.Text = string.Empty;
+        }
+
         appointment.AppointmentDateTime = new DateTime(
             appointmentDatePicker.Date.Year,
             appointmentDatePicker.Date.Month,

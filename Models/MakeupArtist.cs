@@ -22,7 +22,7 @@ namespace ProiectMedii.Models
         [SQLiteNetExtensions.Attributes.ForeignKey(typeof(Service))]
         public int? ServiceID { get; set; }
 
-        [OneToMany]
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeDelete)]
         public List<Appointment> Appointments { get; set; }
 
         [OneToMany]
