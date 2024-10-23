@@ -29,16 +29,13 @@ public partial class CreateAppointmentPage : ContentPage
                 }
             }
 
-            // Set other properties of the Appointment as needed
             var appointment = new Appointment
             {
                 MakeupArtistID = makeupArtistId,
-                // Set other properties of the Appointment as needed
             };
 
             BindingContext = appointment;
 
-            // Initialize the DatePicker and TimePicker with the existing AppointmentDateTime
             appointmentDatePicker.Date = appointment.AppointmentDateTime.Date;
             appointmentTimePicker.Time = appointment.AppointmentDateTime.TimeOfDay;
 
@@ -83,7 +80,6 @@ public partial class CreateAppointmentPage : ContentPage
 
         await App.Database.SaveAppointmentAsync(appointment);
 
-        // Navigate back to the previous page or any desired page
         await Navigation.PopAsync();
     }
 
