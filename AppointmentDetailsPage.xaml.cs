@@ -13,7 +13,6 @@ public partial class AppointmentDetailsPage : ContentPage
 
     private async void InitializePageAsync(Appointment selectedAppointment)
     {
-        // Fetch additional data based on selectedAppointment if needed
         var makeupArtist = await App.Database.GetMakeupArtistAsync(selectedAppointment.MakeupArtistID);
 
         if (makeupArtist != null && makeupArtist.ServiceID.HasValue)
@@ -27,7 +26,6 @@ public partial class AppointmentDetailsPage : ContentPage
             }
         }
 
-        // Set the BindingContext for data binding
         BindingContext = selectedAppointment;
     }
 
