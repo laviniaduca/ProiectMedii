@@ -24,7 +24,6 @@ namespace ProiectMedii
                 }
             }
 
-            // Set other properties of the Appointment as needed
             BindingContext = makeupArtist;
         }
 
@@ -32,12 +31,10 @@ namespace ProiectMedii
         {
             base.OnAppearing();
 
-            // Assuming you passed the selected MakeupArtist through navigation
             var selectedArtist = BindingContext as MakeupArtist;
 
             if (selectedArtist != null)
             {
-                // Set the BindingContext for data binding
                 BindingContext = selectedArtist;
             }
         }
