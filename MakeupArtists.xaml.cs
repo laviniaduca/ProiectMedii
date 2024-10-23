@@ -42,7 +42,6 @@ namespace ProiectMedii
                     await Navigation.PushAsync(new MakeupArtistDetailsPage(selectedMakeupArtist));
                 }
 
-                // Deselect the item to allow selecting it again
                 collectionView.SelectedItem = null;
             }
         }
